@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="UWA.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="493" Width="998">
+
+    <Grid Margin="0,0,-0.2,10">
+        <Button x:Name="btnConn" Content="Connect" HorizontalAlignment="Left" Margin="82,318,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock x:Name="txtStat" HorizontalAlignment="Left" Margin="168,325,0,0" Text="Diconnected" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="btnHRM" Content="Get HR -&gt;" HorizontalAlignment="Left" Margin="82,373,0,0" VerticalAlignment="Top" Click="btnHRM_Click"/>
+        <TextBlock x:Name="txtHR" HorizontalAlignment="Left" Margin="197,380,0,0" Text="??" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.562,0.673" FontSize="14" Height="27" Width="25"/>
+        <FlipView x:Name="flipBand" HorizontalAlignment="Left" Margin="79,51,0,0" VerticalAlignment="Top" Width="390" Height="247" SelectionChanged="FlipView_SelectionChanged">
+            <FlipViewItem Content="Mi Band 2" HorizontalAlignment="Center" VerticalAlignment="Top" RequestedTheme="Default" Margin="0,0,0,0">
+                <FlipViewItem.Background>
+                    <ImageBrush ImageSource="/Assets/miband2.png"/>
+                </FlipViewItem.Background>
+            </FlipViewItem>
+            <FlipViewItem Content="Polar OH1">
+                <FlipViewItem.Background>
+                    <ImageBrush ImageSource="/Assets/Polar-OH1.png"/>
+                </FlipViewItem.Background>
+            </FlipViewItem>
+        </FlipView>
+        <Button x:Name="OHbtnSearch" Content="Search" HorizontalAlignment="Left" Margin="304,325,0,0" VerticalAlignment="Top" Click="OHbtnSearch_Click" Visibility="Collapsed"/>
+        <Button x:Name="OHbtnConn" Content="Connect" HorizontalAlignment="Left" Margin="304,374,0,0" VerticalAlignment="Top" Click="OHbtnConn_Click" Visibility="Collapsed"/>
+        <Button x:Name="OHbtnHR" Content="Get HR-Measurement" HorizontalAlignment="Left" Margin="304,423,0,0" VerticalAlignment="Top" Click="OHbtnHR_Click" Visibility="Collapsed"/>
+        <ListBox x:Name="lstDevices" HorizontalAlignment="Left" Height="148" Margin="508,51,0,0" VerticalAlignment="Top" Width="436" Visibility="Visible" SelectionChanged="lstDevices_SelectionChanged" FontSize="7"/>
+        <TextBlock x:Name="OHtxtStat" HorizontalAlignment="Left" Margin="523,232,0,0" Text="Status" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Consolas"/>
+        <TextBlock x:Name="OHtxtHR" HorizontalAlignment="Left" Margin="523,365,0,0" Text="???" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Visibility="Visible" RenderTransformOrigin="0.557,0.51"/>
+
+    </Grid>
+</Page>
